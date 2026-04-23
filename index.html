@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>분급제 37% 시대, 내 GA는 버틸 수 있을까 | 4가지 체력 지표 자가진단</title>
+<meta name="description" content="2027년 4년 분급, 2029년 7년 분급. GA 연매출 2조 감소 전망. 분급제 시대 GA 생존을 결정하는 4가지 지표로 자기 소속 GA 체력을 점검해보세요. 실제 등록취소·과태료·환수 사례 기반." />
+<meta property="og:title" content="분급제 37% 시대, 내 GA는 버틸 수 있을까" />
+<meta property="og:description" content="수수료 선지급 축소는 시작일 뿐. 진짜 문제는 GA의 흡수 체력입니다. 4가지 체력 지표 + 익명 비교표 + 실제 피해 사례." />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="ko_KR" />
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'] },
+        colors: {
+          brand: { DEFAULT: '#1f4ed8', hover: '#1a3fb2', soft: '#eef3ff' },
+          ink: {
+            900: '#0a0a0a', 700: '#262626', 500: '#525252', 400: '#737373',
+            300: '#a3a3a3', 200: '#d4d4d4', 100: '#ededed', 50:  '#f7f7f7',
+          },
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html, body { background: #ffffff; color: #0a0a0a; }
+  body {
+    font-family: "Pretendard Variable", Pretendard, system-ui, -apple-system, sans-serif;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .ko-body { line-height: 1.75; letter-spacing: -0.011em; }
+  .ko-head { line-height: 1.28 !important; letter-spacing: -0.025em; word-break: keep-all; }
+  .ko-head br + span, .ko-head span { line-height: inherit; }
+
+  .btn-brand {
+    display:inline-flex; align-items:center; gap:.55rem;
+    padding: .9rem 1.4rem;
+    background:#1f4ed8; color:#ffffff;
+    border-radius:10px; font-weight:700;
+    transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 1px 2px rgba(31,78,216,.18);
+  }
+  .btn-brand:hover { background:#1a3fb2; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(31,78,216,.22); }
+
+  .btn-line {
+    display:inline-flex; align-items:center; gap:.55rem;
+    padding: .9rem 1.4rem;
+    background:#ffffff; color:#0a0a0a;
+    border:1px solid #e5e5e5; border-radius:10px; font-weight:600;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .btn-line:hover { border-color:#0a0a0a; background:#fafafa; }
+
+  .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#eef3ff; color:#1a3fb2; border-radius:999px; font-size:.78rem; font-weight:600; }
+  .chip-gray { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#f7f7f7; color:#525252; border:1px solid #ededed; border-radius:999px; font-size:.78rem; font-weight:500; }
+  .chip-dark { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#0a0a0a; color:#ffffff; border-radius:999px; font-size:.78rem; font-weight:600; }
+  .chip-red  { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#fff5f5; color:#7b1f1f; border:1px solid #fed7d7; border-radius:999px; font-size:.78rem; font-weight:600; }
+
+  .num { display:inline-grid; place-items:center; width:42px; height:42px; background:#0a0a0a; color:#ffffff; border-radius:10px; font-weight:800; font-size:1.05rem; }
+  .num-sm { display:inline-grid; place-items:center; width:28px; height:28px; background:#0a0a0a; color:#ffffff; border-radius:7px; font-weight:800; font-size:.8rem; }
+
+  iconify-icon { display:inline-block; }
+
+  .section { padding-top: 5rem; padding-bottom: 5rem; }
+  @media (max-width: 768px) { .section { padding-top: 3.5rem; padding-bottom: 3.5rem; } }
+
+  .card { background:#ffffff; border:1px solid #ededed; border-radius:14px; padding: 1.75rem; }
+  @media (min-width: 768px) { .card { padding: 2rem; } }
+
+  .verdict-box {
+    background:#fff5f5;
+    border:1px solid #fed7d7;
+    border-left: 4px solid #c53030;
+    border-radius:10px;
+    padding: 1rem 1.15rem;
+    color:#7b1f1f;
+  }
+
+  .diag-item {
+    display:flex; align-items:flex-start; gap:.8rem;
+    padding: .9rem 1rem;
+    background:#ffffff; border:1px solid #ededed; border-radius:10px;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .diag-item:hover { border-color:#1f4ed8; background:#fafaff; }
+  .diag-check { flex: 0 0 22px; height:22px; border:2px solid #a3a3a3; border-radius:5px; margin-top:2px; }
+
+  .compare-table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  .compare-table th, .compare-table td { padding: .85rem .85rem; border-bottom: 1px solid #ededed; text-align: left; vertical-align: middle; }
+  .compare-table th { background: #f7f7f7; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #525252; }
+  .compare-table tr:last-child td { border-bottom: 0; }
+  .compare-table .gaD { background: #fafbff; }
+  .compare-table .gaD td { border-bottom-color: #c7d6ff; color: #1a3fb2; font-weight: 700; }
+  .grade-pill { display:inline-flex; padding:.15rem .5rem; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+  .grade-1 { background:#eef3ff; color:#1a3fb2; }
+  .grade-2 { background:#eef3ff; color:#1a3fb2; opacity: .85; }
+  .grade-3 { background:#f7f7f7; color:#525252; }
+  .grade-4 { background:#fff5f5; color:#7b1f1f; }
+  .grade-5 { background:#fff5f5; color:#7b1f1f; }
+
+  .case-card {
+    background:#ffffff; border:1px solid #ededed; border-radius:14px;
+    padding: 1.5rem 1.5rem;
+  }
+  .case-source {
+    font-size:.72rem; color:#737373;
+    border-top:1px dashed #ededed; padding-top:.6rem; margin-top:1rem;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 1.25rem;
+    border-left: 2px solid #ededed;
+  }
+  .timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -7px; top: 2px;
+    width: 12px; height: 12px; background: #0a0a0a; border-radius: 50%;
+    border: 2px solid #ffffff;
+  }
+  .timeline-item.active::before { background: #1f4ed8; }
+</style>
+</head>
+<body class="min-h-[100dvh] antialiased text-ink-900 selection:bg-brand-soft selection:text-brand-hover">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-ink-100">
+  <nav class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <span class="grid place-items-center h-8 w-8 rounded-md bg-ink-900 text-white font-extrabold text-[14px]">SA</span>
+      <span class="font-bold text-ink-900 tracking-tight hidden sm:inline">세일즈 아카데미</span>
+    </a>
+    <a href="https://open.kakao.com/o/gBfA3Nqi" target="_blank" rel="noopener" class="btn-brand !py-2 !px-3.5 text-sm">
+      단톡방 입장
+      <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" class="section pt-14 md:pt-20">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip-dark">
+      <iconify-icon icon="solar:shield-warning-bold" width="14"></iconify-icon>
+      분급제 시대 · GA 체력 점검
+    </span>
+    <h1 class="ko-head font-black text-ink-900 mt-6 text-4xl md:text-[3rem] tracking-tight">
+      수수료 선지급 축소는 시작일 뿐입니다.<br/>
+      <span class="text-brand">진짜 위기는 GA가 그 충격을 흡수할 체력이 있는가.</span>
+    </h1>
+    <p class="ko-body text-ink-500 mt-6 max-w-2xl text-[1.05rem]">
+      2027년부터 <span class="font-semibold text-ink-900">4년 분급</span>, 2029년부터 <span class="font-semibold text-ink-900">7년 분급</span>. 초년도 수수료 90% 선지급 구조가 유지관리 중심으로 전면 전환됩니다.
+      GA 연매출 감소 추정 <span class="font-semibold text-ink-900">약 2조원</span> — 자본·체계 부족한 GA부터 무너집니다.
+      이 페이지는 설계사 입장에서 <span class="font-semibold text-ink-900">본인 소속 GA의 생존 체력</span>을 4가지 지표로 점검하는 자가진단입니다.
+    </p>
+
+    <div class="mt-9 flex flex-wrap items-center gap-3">
+      <a href="#checklist" class="btn-brand">
+        4가지 체력 지표 바로 보기
+        <iconify-icon icon="solar:arrow-down-linear" width="18"></iconify-icon>
+      </a>
+      <a href="#cta" class="btn-line">
+        <iconify-icon icon="solar:users-group-rounded-linear" width="18"></iconify-icon>
+        GA 정보 단톡방
+      </a>
+    </div>
+
+    <!-- Result strip -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-100 border border-ink-100 rounded-2xl overflow-hidden">
+      <div class="bg-white p-6">
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">분급 시작</div>
+        <div class="mt-2 font-extrabold text-3xl text-ink-900 tabular-nums">2027년 <span class="text-brand">1월</span></div>
+        <div class="text-sm text-ink-500 mt-1">4년 분급, 2029년 7년 분급</div>
+      </div>
+      <div class="bg-white p-6">
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">대형 GA 75곳 평가</div>
+        <div class="mt-2 font-extrabold text-3xl text-ink-900"><span class="text-brand">29.3%</span> 취약·위험</div>
+        <div class="text-sm text-ink-500 mt-1">중소 GA는 4~5등급이 52% · 금감원 2025</div>
+      </div>
+      <div class="bg-white p-6">
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">GA 이탈 연쇄해지</div>
+        <div class="mt-2 font-extrabold text-3xl text-ink-900">1명당 <span class="text-brand">7건+</span></div>
+        <div class="text-sm text-ink-500 mt-1">삼성생명 1개사 기준, 부당승환 제재 리스크</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE: 분급제 시행 일정 -->
+<section class="section bg-ink-50 border-y border-ink-100">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip-gray"><iconify-icon icon="solar:calendar-bold" width="14"></iconify-icon> 확정 일정</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      분급제 시행 일정 — 2026년부터 단계적 적용
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      금융위 보험업감독규정 개정안 확정(2024.12). "검토 중" 아니라 <span class="font-semibold text-ink-900">이미 확정된 일정</span>입니다.
+    </p>
+
+    <div class="mt-10">
+      <div class="timeline-item active">
+        <div class="text-xs text-brand font-bold uppercase tracking-wider">2026.1</div>
+        <div class="font-bold text-ink-900 mt-1">사업비 과다집행 기관제재 신설</div>
+        <p class="ko-body text-ink-500 text-sm mt-1">GA 사업비 과다 지출 시 기관 제재 도입.</p>
+      </div>
+      <div class="timeline-item active">
+        <div class="text-xs text-brand font-bold uppercase tracking-wider">2026.3</div>
+        <div class="font-bold text-ink-900 mt-1">판매수수료 비교공시 시행</div>
+        <p class="ko-body text-ink-500 text-sm mt-1">생·손보협회가 GA별 수수료 구조를 공개. 고객·설계사가 비교 가능.</p>
+      </div>
+      <div class="timeline-item active">
+        <div class="text-xs text-brand font-bold uppercase tracking-wider">2026.7</div>
+        <div class="font-bold text-ink-900 mt-1">GA 설계사에도 '1200%룰' 적용</div>
+        <p class="ko-body text-ink-500 text-sm mt-1">정착지원금·시책·선지급 전부 포함한 한도 적용. 대규모 정착지원금 지급이 사실상 봉쇄됩니다.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="text-xs text-ink-700 font-bold uppercase tracking-wider">2027.1</div>
+        <div class="font-bold text-ink-900 mt-1">설계사 판매수수료 <span class="text-brand">4년 분급</span> 시작</div>
+        <p class="ko-body text-ink-500 text-sm mt-1">선지급은 계약체결비용 한도 내로 제한. 나머지는 4년간 매월 안분(유지관리수수료 신설).</p>
+      </div>
+      <div class="timeline-item">
+        <div class="text-xs text-ink-700 font-bold uppercase tracking-wider">2029.1</div>
+        <div class="font-bold text-ink-900 mt-1"><span class="text-brand">7년 분급</span> 전면 확대</div>
+        <p class="ko-body text-ink-500 text-sm mt-1">유지관리 체계 없는 GA는 이 시점에 현금흐름 한계 도달. 소속 설계사도 동반 타격.</p>
+      </div>
+    </div>
+
+    <p class="text-xs text-ink-400 mt-6">
+      <iconify-icon icon="solar:document-text-linear" width="14"></iconify-icon>
+      근거: 금융위원회 보험업감독규정 개정(2024.12) / 대한금융신문·파이낸셜뉴스 보도
+    </p>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS: GA 체력이 왜 결정적인가 -->
+<section class="section">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip-red"><iconify-icon icon="solar:danger-triangle-bold" width="14"></iconify-icon> 왜 '소속 GA'가 전부인가</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      분급제는 설계사 수입 문제가 아니라,<br/>
+      <span class="text-brand">GA 생존 문제입니다.</span>
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      분급제 본질은 <span class="font-semibold text-ink-900">"수수료를 7년에 걸쳐 나눠 주는 것"</span>입니다. GA는 그 사이에 계약 유지·관리·데이터 서비스로 설계사를 붙잡아 둬야 해요. 이걸 못 하는 GA는 3가지 경로 중 하나로 무너집니다.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="card">
+        <span class="num">!</span>
+        <h3 class="font-bold text-ink-900 text-lg mt-4">현금흐름 고갈</h3>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">자본 적은 GA는 선지급이 줄어드는 순간부터 설계사 지급·운영비 동시에 못 버팁니다. 중소 GA부터 연쇄 도미노.</p>
+      </div>
+      <div class="card">
+        <span class="num">!</span>
+        <h3 class="font-bold text-ink-900 text-lg mt-4">원수사 거래 축소</h3>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">보험사 위탁판매 가이드라인이 2026년 시행. 불완전판매율·민원·유지율 기준 미달 GA는 <span class="font-semibold">제휴 축소·중단</span>. 설계사는 신계약 쓸 창구 자체가 좁아집니다.</p>
+      </div>
+      <div class="card">
+        <span class="num">!</span>
+        <h3 class="font-bold text-ink-900 text-lg mt-4">내부통제 제재 직격</h3>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">금감원이 2026년부터 대형 GA 검사 강화 + 제재 최대화. 등록취소·과태료·업무정지 시 소속 설계사 전원 연쇄 피해.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST: 4가지 체력 지표 -->
+<section id="checklist" class="section bg-ink-50 border-y border-ink-100">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip"><iconify-icon icon="solar:clipboard-check-bold" width="14"></iconify-icon> 자가진단</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      분급제 버틸 GA의 4가지 체력 지표
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      지금 소속 GA에 대해 아래 4가지를 알고 계신가요? <span class="font-semibold text-ink-900">3개 이상 "모른다"</span>면, 분급제 시대 현금흐름이 꺾일 때 본인이 가장 먼저 타격받는 구조에 계실 수 있습니다.
+    </p>
+
+    <div class="mt-8 space-y-3">
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">① 내 GA의 금감원 내부통제 실태평가 등급 (1~5등급)</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">2024년 대형 GA 75곳 평균 3등급. <span class="font-semibold">4~5등급 29.3%, 중소 GA 52%가 취약·위험 등급.</span> 1~2등급 비중 80%는 설계사 3,000명 이상 대형사에 집중.</p>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">② 순수 자본금 규모 · 대출 의존도</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">자본 작고 부채 많은 GA는 분급제 현금흐름 변동에 취약. 정착지원금 지급 재원이 대출인 GA는 1200%룰 시행 시 재정착이 불가능해집니다.</p>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">③ 설계사 유지관리 · 코칭 · 데이터 시스템</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">분급제의 핵심은 "유지관리수수료"입니다. 유지율 관리 체계, 코칭 시스템, 영업 데이터 분석이 실제 돌아가는지 — "있다고 말만 하는 곳"과 "매월 데이터가 나오는 곳"은 전혀 다릅니다.</p>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">④ 정착지원금 약정서 · 환수·위약벌 조항</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">이적 시 받는 정착지원금 약정서에 <span class="font-semibold">위약벌 조항</span>(근무기간 미달 시 지원금+추가 금액 청구)이 있는지. 근거 약한 약정은 분쟁 시 설계사가 불리합니다. 업계 일부 GA에서 수천만 원 환수·급여 가압류 사례 보고.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A/B/C/D 비교표 -->
+<section class="section">
+  <div class="max-w-5xl mx-auto px-5">
+    <span class="chip-gray"><iconify-icon icon="solar:chart-square-bold" width="14"></iconify-icon> 익명 비교 · 가상 사례</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      같은 설계사, 다른 GA <span class="text-brand">— 4곳 비교</span>
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      아래는 업계 공개 자료(금감원 평가·재무공시·기사 보도) 기반으로 구성한 <span class="font-semibold text-ink-900">가상 4개 GA 비교 프로필</span>입니다. 특정 회사를 지칭하지 않으며, 본인 소속 GA가 어디에 가까운지 대입해 보세요.
+    </p>
+
+    <div class="mt-10 overflow-x-auto card !p-0">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>지표</th>
+            <th>A GA</th>
+            <th>B GA</th>
+            <th>C GA</th>
+            <th class="!text-brand">D GA (기준)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold text-ink-900">내부통제 등급</td>
+            <td><span class="grade-pill grade-5">5등급 (위험)</span></td>
+            <td><span class="grade-pill grade-4">4등급 (취약)</span></td>
+            <td><span class="grade-pill grade-3">3등급 (보통)</span></td>
+            <td class="gaD"><span class="grade-pill grade-1">1등급 (우수)</span></td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-ink-900">순수 자본금</td>
+            <td>약 20억</td>
+            <td>약 50억</td>
+            <td>약 100억</td>
+            <td class="gaD">150억 이상</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-ink-900">부채 / 대출</td>
+            <td>상당 규모</td>
+            <td>중간</td>
+            <td>일부</td>
+            <td class="gaD"><span class="font-bold">없음 (0)</span></td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-ink-900">코칭·데이터 시스템</td>
+            <td>없음</td>
+            <td>형식적</td>
+            <td>일부 운영</td>
+            <td class="gaD">월간 데이터 + 전담 코칭</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-ink-900">정착지원금 지급 구조</td>
+            <td>위약벌 포함</td>
+            <td>위약벌 포함</td>
+            <td>조건부</td>
+            <td class="gaD">명확한 약정 + 분쟁 이력 없음</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-ink-900">원수사 거래 범위</td>
+            <td>축소 위험</td>
+            <td>주의</td>
+            <td>정상</td>
+            <td class="gaD">정상 + 확대</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-ink-900">분급제 버틸 체력</td>
+            <td><span class="grade-pill grade-5">취약</span></td>
+            <td><span class="grade-pill grade-4">주의</span></td>
+            <td><span class="grade-pill grade-3">보통</span></td>
+            <td class="gaD"><span class="grade-pill grade-1">안정</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-xs text-ink-400 mt-6 max-w-3xl">
+      ※ 본 비교표는 금감원 2024 실태평가(대형 GA 75곳), 보험사 위탁판매 가이드라인, 금융위 개정안 등 공개 자료를 기반으로 한 <span class="font-semibold">업계 일반 사례의 가상 프로필</span>입니다. 특정 회사의 실제 수치를 반영하지 않으며, 독자가 본인 소속사의 실제 수치를 확인해 비교하는 용도로 제작되었습니다.
+    </p>
+
+    <div class="mt-8 card" style="background:linear-gradient(180deg,#fafbff,#f4f7ff); border-color:#c7d6ff;">
+      <div class="flex items-start gap-3">
+        <iconify-icon icon="solar:info-circle-bold" width="28" class="text-brand mt-0.5 shrink-0"></iconify-icon>
+        <div>
+          <h3 class="font-bold text-ink-900">D GA가 어느 회사인지는 공개하지 않습니다.</h3>
+          <p class="ko-body text-ink-700 mt-2 text-[.95rem]">
+            "우리 회사가 최고"를 광고하는 자리가 아닙니다. 이 페이지의 목적은 <span class="font-semibold">본인 소속 GA가 A/B/C 중 어디에 해당하는지 스스로 점검</span>하는 것입니다. D GA 기준이 궁금하시거나 본인 소속사가 어느 유형인지 직접 확인하고 싶으시면, 아래 단톡방에서 익명으로 질문 주세요. 업계 전문가들이 함께 봐드립니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL CASES -->
+<section class="section bg-ink-50 border-y border-ink-100">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip-red"><iconify-icon icon="solar:danger-bold" width="14"></iconify-icon> 실제 피해 사례</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      자본·체계 부족한 GA에서 실제로 일어난 일
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      모두 공개 보도 또는 금감원 공식 발표로 확인된 사례입니다. "혹시 그런 일이 있나?" 수준이 아니라 <span class="font-semibold text-ink-900">이미 설계사들이 입은 실제 피해</span>입니다.
+    </p>
+
+    <div class="mt-10 space-y-5">
+
+      <!-- Case 1 -->
+      <div class="case-card">
+        <div class="flex items-start gap-4">
+          <span class="num shrink-0">01</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">정착지원금 · 환수 소송</div>
+            <h3 class="font-bold text-ink-900 text-lg md:text-xl ko-head mt-0.5">퇴사 후 3,000만원 환수 통보 + 급여 가압류</h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-4 text-[.95rem]">
+          한 중소 GA에서 이적 설계사가 퇴사한 뒤, GA가 정착지원금 + 성과수당 회수 명목으로 <span class="font-semibold">3,000만원 환수 통보 + 새 직장 급여 가압류</span>. 2025년 7월 기사화.
+        </p>
+        <p class="ko-body text-ink-700 mt-3 text-[.95rem]">
+          업계 현실: 인카금융서비스는 정착지원금 약정서에 <span class="font-semibold">위약벌 조항</span>(근무기간 미달 시 지원금+추가 금액 청구)을 두고 설계사와 법적 다툼. 피플라이프GA는 퇴사 설계사에게 계약유지 환수금 청구(1인당 수백만~수천만원). <span class="font-semibold text-ink-900">약정서가 제대로 쓰여 있으면 대법원 판례상 설계사가 패소하는 경우가 많습니다.</span>
+        </p>
+        <div class="verdict-box mt-4">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">교훈</div>
+          <p class="text-[.92rem] mt-1">"계약서 잘 모르니까 대충 사인"이 가장 큰 리스크. 정착지원금 큰 곳 = 위약벌 조항 가능성 높음. 이적 전 반드시 확인.</p>
+        </div>
+        <div class="case-source">
+          출처: 중앙이코노미뉴스(2024, 인카금융 위약벌) · 중앙이코노미뉴스 단독(피플라이프GA 환수) · 파이낸셜포스트(2025.7, 3천만원 가압류 사례)
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card">
+        <div class="flex items-start gap-4">
+          <span class="num shrink-0">02</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">부당승환 · 과태료·업무정지</div>
+            <h3 class="font-bold text-ink-900 text-lg md:text-xl ko-head mt-0.5">GA 설계사 20~23명 적발, 과태료 6,400만~7,000만원 · 설계사 업무정지 6개월</h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-4 text-[.95rem]">
+          <span class="font-semibold">스카이블루에셋</span>: 설계사 20명이 73명 고객의 기존계약 <span class="font-semibold">119건을 부당 소멸</span>시킨 것으로 적발. 과태료 7,000만원 + 기관주의.<br/>
+          <span class="font-semibold">리더스에셋어드바이저</span>: 설계사 23명이 기존계약 <span class="font-semibold">111건 부당 해지</span>. 과태료 6,400만원 + 기관주의. 개별 설계사는 <span class="font-semibold">6개월 업무정지</span>까지 받은 케이스 다수.
+        </p>
+        <p class="ko-body text-ink-700 mt-3 text-[.95rem]">
+          2026.1부터 <span class="font-semibold">설계사 2회 이상 위반 시 신분제재 감경 불인정</span> 방침이 시행됩니다. GA가 "성과만 내면 된다"며 부당승환을 묵인·장려하면, 설계사 본인이 나이 40대·50대에 직위를 잃을 수 있습니다.
+        </p>
+        <div class="verdict-box mt-4">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">교훈</div>
+          <p class="text-[.92rem] mt-1">GA의 <span class="font-semibold">내부통제 시스템(전산·준법감시)</span>이 없으면 설계사는 단순히 "연쇄 피해자"가 됩니다. GA 선택이 곧 본인 라이선스 리스크 관리입니다.</p>
+        </div>
+        <div class="case-source">
+          출처: 오늘경제(스카이블루에셋) · 조세금융신문·시사뉴스(리더스에셋어드바이저) · 머니S(업무정지 6개월 사례)
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card">
+        <div class="flex items-start gap-4">
+          <span class="num shrink-0">03</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">등록취소 · GA 공중분해</div>
+            <h3 class="font-bold text-ink-900 text-lg md:text-xl ko-head mt-0.5">GA 등록취소 → 소속 설계사 67명 수사 고발 · 1,113억원 유사수신</h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-4 text-[.95rem]">
+          <span class="font-semibold">피에스파인서비스</span>: 대표와 설계사 67명이 계약자 415명에게 <span class="font-semibold">1,113억원을 대부업체에 대여 알선</span>, 약 <span class="font-semibold">294억원 미상환</span>. <span class="font-semibold">GA 등록취소</span> + 임원 8명 해임권고·정직 + <span class="font-semibold">설계사 67명 수사기관 고발</span>. 2025년 12월 처분 확정.
+        </p>
+        <p class="ko-body text-ink-700 mt-3 text-[.95rem]">
+          GA 등록취소 시 소속 설계사는 <span class="font-semibold">판매 라이선스 공중분해</span> + 기존 계약 관리 불가 + 민원이 본인에게 집중됩니다. 수입과 평판 둘 다 동시 타격.
+        </p>
+        <div class="verdict-box mt-4">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">교훈</div>
+          <p class="text-[.92rem] mt-1">GA 내부통제 등급 4~5등급은 결코 "숫자 문제"가 아닙니다. <span class="font-semibold">본인 라이선스와 평판이 걸린 문제</span>입니다.</p>
+        </div>
+        <div class="case-source">
+          출처: 서울경제·더퍼블릭·머니투데이(2025.12, 피에스파인서비스 등록취소)
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="case-card">
+        <div class="flex items-start gap-4">
+          <span class="num shrink-0">04</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">동반해지 · 설계사 이동 후유증</div>
+            <h3 class="font-bold text-ink-900 text-lg md:text-xl ko-head mt-0.5">설계사 이탈 1,729명 → 보험계약 해지 12,935건 <span class="text-ink-500 text-base font-normal">(삼성생명 1개사 기준)</span></h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-4 text-[.95rem]">
+          2024.1~2025.11 기간, 삼성생명 전속 설계사 <span class="font-semibold">1,729명이 GA로 이동</span>. 이동 전후 3개월씩 <span class="font-semibold">계약해지 12,935건</span> 발생. 이탈 설계사 <span class="font-semibold">1명당 평균 7건 이상의 "동반 해지"</span>가 발생한 셈.
+        </p>
+        <p class="ko-body text-ink-700 mt-3 text-[.95rem]">
+          정규 전속설계사 월평균 해지 건수는 0.1건 미만. <span class="font-semibold">부당승환 강한 정황</span>으로 해석되고 있습니다. 이런 이동이 반복되면 개별 설계사가 부당승환 타겟이 됩니다.
+        </p>
+        <div class="verdict-box mt-4">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">교훈</div>
+          <p class="text-[.92rem] mt-1">"이적하면 기존 고객 다 가져올 수 있다"는 GA의 유혹은 본인에게 부당승환 책임으로 돌아올 수 있습니다. 정착지원금만 보고 옮기는 시대는 끝났습니다.</p>
+        </div>
+        <div class="case-source">
+          출처: 머니투데이 단독(2025.12.23) / 금감원 7개 대형 GA 검사 결과
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KEY PRINCIPLE -->
+<section class="section">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="card" style="background:linear-gradient(180deg,#fafbff,#f4f7ff); border-color:#c7d6ff;">
+      <span class="chip"><iconify-icon icon="solar:lightbulb-bold" width="14"></iconify-icon> 핵심 원칙</span>
+      <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+        좋은 GA는 "더 많이 주는 곳"이 아닙니다.<br/>
+        <span class="text-brand">받은 것을 지킬 수 있는 곳이 좋은 GA입니다.</span>
+      </h2>
+      <p class="ko-body text-ink-700 mt-5 text-[1rem]">
+        정착지원금 액수·초년도 수수료율만 보고 이적하면 2027년 이후 현금흐름 꺾일 때 회복이 안 됩니다.
+        <span class="font-semibold">자본·내부통제·코칭·데이터</span> — 이 4가지가 받쳐주는 GA만이 7년 분급 시대에 설계사 수입을 지켜줍니다.
+        분급제는 GA를 압박하는 제도이고, <span class="font-semibold">그 압박의 최종 피해자는 소속 설계사</span>입니다. 오늘 GA를 점검하지 않으면, 2027년에 수습할 수 없습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="section bg-ink-900 text-white">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold">
+        <iconify-icon icon="solar:chat-round-dots-bold" width="14"></iconify-icon>
+        GA 정보 · 영업 정보 허브
+      </span>
+      <h2 class="ko-head font-extrabold text-white mt-6 text-3xl md:text-[2.2rem]">
+        내 소속 GA가 어디에 해당하는지<br/>
+        <span class="text-brand-soft">직접 확인하고 싶으시면.</span>
+      </h2>
+      <p class="ko-body text-ink-200 mt-5 max-w-xl mx-auto text-[1rem]">
+        세일즈 아카데미 단톡방에 <span class="text-white font-semibold">다양한 GA 소식과 영업정보</span>가 공유됩니다. 본인 GA가 A/B/C 중 어디에 가까운지, D GA 기준은 무엇인지 — 익명으로 질문하시면 업계 전문가들이 같이 봐드립니다. 이적 권유 없고, 유료 강의 판매 없습니다.
+      </p>
+    </div>
+
+    <div class="mt-12 max-w-xl mx-auto">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-7">
+        <div class="text-xs text-brand-soft font-bold tracking-wider uppercase">설계사 전용 단톡방 · 무료</div>
+        <h3 class="font-bold text-white text-xl mt-2">단톡방 입장 (승인제)</h3>
+        <p class="ko-body text-ink-200 text-sm mt-3">다양한 GA 소식·재무 분석·내부통제 등급 해석, 영업 스크립트, 녹취 첨삭까지. 전부 무료.</p>
+        <ul class="mt-4 space-y-1.5 text-ink-200 text-sm">
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>주간 GA 이슈 정리 (제재·재무·원수사 거래 동향)</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>본인 GA 익명 진단 Q&A</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>정착지원금 약정서 체크포인트</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>TA 화법·거절 대응·약속 확정 스크립트</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>AI 상담 연습 프로그램 (무료)</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>녹취 프로그램 (무료) · 월간 Q&A 라이브</li>
+        </ul>
+        <a href="https://open.kakao.com/o/gBfA3Nqi" target="_blank" rel="noopener" class="btn-brand mt-6 w-full justify-center">
+          <iconify-icon icon="solar:users-group-rounded-bold" width="20"></iconify-icon>
+          단톡방 입장하기
+        </a>
+        <p class="text-xs text-ink-400 mt-3 text-center">승인제 · MDRT COT 출신 현직 설계사 & 코치진이 운영</p>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <p class="text-xs text-ink-300">
+        <iconify-icon icon="solar:shield-check-bold" width="14"></iconify-icon>
+        입장 무료 · 익명 허용 · 이적 권유 없음 · 유료 강의 판매 없음
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 border-t border-ink-100 bg-white">
+  <div class="max-w-5xl mx-auto px-5 text-center">
+    <div class="flex items-center justify-center gap-2">
+      <span class="grid place-items-center h-7 w-7 rounded-md bg-ink-900 text-white font-extrabold text-[12px]">SA</span>
+      <span class="font-bold text-ink-900 text-sm">세일즈 아카데미</span>
+    </div>
+    <p class="text-xs text-ink-400 mt-3">
+      장진호 · MDRT COT · 한국바른보험 아카데미 · 세일즈 아카데미 단톡방 운영
+    </p>
+    <p class="text-[.7rem] text-ink-400 mt-3 max-w-xl mx-auto leading-relaxed">
+      본 페이지의 "A GA / B GA / C GA / D GA" 비교는 업계 공개 자료 기반 가상 사례이며 특정 회사를 지칭하지 않습니다. 실제 피해 사례는 공개 보도 또는 금감원 공식 발표에서 인용한 내용입니다.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
